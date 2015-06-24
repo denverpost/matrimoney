@@ -2,6 +2,10 @@
 
 A Denver Post Features project bringing towgether over two years' worth of reporting on how to plan and pull off a wedding.
 
+## Origin
+
+Based on The Denver Post's [specialtemplate](https://github.com/denverpost/specialtemplate) projects template.
+
 ### Codebase resources
 * [ZURB Foundation](http://foundation.zurb.com)
 # [unveil.js](https://github.com/schneidan/unveil) (a slightly-tweaked fork)
