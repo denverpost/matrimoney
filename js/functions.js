@@ -237,7 +237,7 @@ function swapAd() {
 
 function getAdTimes(numAds) {
     var adReturns = [];
-    var chunkHeight = docHeight / numAds;
+    var chunkHeight = docHeight / numAds + 1;
     var chunkHalf = chunkHeight / 2;
     for (i=1;i<=numAds;i++) {
         adReturns.push( Math.round( chunkHalf + (chunkHeight * i) ) );
@@ -250,7 +250,7 @@ function checkAdPos() {
         var topNow = $(window).scrollTop();
         if (!swapped) {
             var adTimes = getAdTimes(slideAds);
-            for (var i = 0; i <= adTimes.length; i++) {
+            for (var i = 0; i < adTimes.length; i++) {
                 if (!adsloaded[i] && topNow > adTimes[i] && topNow < (typeof adTimes[(i+1)] !== 'undefined' ? adTimes[(i+1)] : docHeight)) {
                     swapAd();
                     adsloaded[i] = true;
