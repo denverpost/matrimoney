@@ -199,7 +199,13 @@ function hideAdManual() {
 }
 
 $(document).keyup(function(e) {
-    if (swapped && e.keyCode == 27) {
+    if ( $('.gridbox.expanded').length ) {
+        $('.gridbox').each(function() {
+            if ( $(this).hasClass('expanded') ) {
+                swapGridBox(this);
+            }
+        });    
+    } else if (!moreAd && e.keyCode == 27) {
         hideAdManual();
     }    
 });
@@ -216,6 +222,76 @@ function getAdSize() {
         return adSizes;
     }*/
 }
+
+/* grid stuff */
+
+function createChartFour() {
+    var lineChartData = {
+        labels : ["2005","2006","2007","2008","2009","2010*","2011","2012","2013","2014"],
+        datasets : [
+            {
+                label: "Homeless mental illness",
+                fillColor : "rgba(0,70,70,0.2)",
+                strokeColor : "rgba(0,70,70,1)",
+                pointColor : "rgba(0,70,70,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(220,220,220,1)",
+                data : [15.4,18.7,21.1,24.2,28.0,23.7,19.4,20.8,23.1,34.4]
+            }
+        ]
+    }
+    var ctx = document.getElementById("homelessline").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+        responsive: true,
+        bezierCurve: false
+    });
+}
+
+var gridOpen = false;
+
+function swapGridBox(box) {
+    if ( !$(box).hasClass('expanded') ) {
+        $(box).parent('li').siblings().css('display','none');
+        $(box).parents('ul').removeClass('small-block-grid-5');
+        $(box).find('p.gridcaption').css('display','none');
+        $(box).find('.gridphotograd').css('display','block');
+        $(box).addClass('expanded');
+        scrollDownTo('#profiles');
+        document.body.style.overflow='hidden';
+        playerClear = false;
+        gridOpen = true;
+    } else if (!playerClear) {
+        $(box).parent('li').siblings().css('display','block');
+        $(box).parents('ul').addClass('small-block-grid-5');
+        $(box).find('p.gridcaption').css('display','block');
+        $(box).find('.gridphotograd').css('display','none');
+        $(box).removeClass('expanded');
+        document.body.style.overflow='auto';
+        playerClear = false;
+        gridOpen = false;
+    }
+}
+
+$('.gridbox').on("click", function() {
+    swapGridBox(this);
+});
+
+$(document).mouseup(function (e)
+{
+    if (gridOpen) {
+        var container = $('.gridbox.expanded');
+        var adWrap = $('#adwrapper');
+        if (!adWrap.is(e.target) && adWrap.has(e.target).length === 0 && !container.is(e.target) && container.has(e.target).length === 0)
+        {
+            swapGridBox(container);
+        }
+    }
+});
+
+$('.gridprofile').scroll(function(){
+    $(this).siblings('.gridphotograd').animate({opacity:'0'},700);
+});
 
 function showAd() {
     var adSize = getAdSize();
