@@ -11,7 +11,7 @@ var galleriesLoaded = [];
 var adsloaded = [];
 /* THIS IS CONFIG DATA SPECIFIC TO SITE */
 var showAds = true; //show slide-up leaderboards at bottom
-var slideAds = 2; //number of times to slide up a leaderboard
+var slideAds = 1; //number of times to slide up a leaderboard
 var titleFade = true; //whether to fade the Denver Post logo in the top-bar to show the "DP" and a text title
 //var pages = ['#titlepage','#part1','#photos','#part2']; //div/section IDs that should trigger a page view and title change
 var pages = [];
@@ -242,7 +242,7 @@ function getAdTimes(numAds) {
     var adReturns = [];
     var chunkHeight = docHeight / (numAds + 1);
     var chunkHalf = chunkHeight / 2;
-    for (i=1;i<=numAds;i++) {
+    for (i=0;i<=numAds;i++) {
         adReturns.push( Math.round( chunkHalf + (chunkHeight * i) ) );
     }
     return adReturns;
