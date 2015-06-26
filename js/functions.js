@@ -250,7 +250,7 @@ function checkAdPos() {
         var topNow = $(window).scrollTop();
         if (!swapped) {
             var adTimes = getAdTimes(slideAds);
-            for (var i = 0; i < adTimes.length; i++) {
+            for (var i = 0; i <= adTimes.length; i++) {
                 if (!adsloaded[i] && topNow > adTimes[i] && topNow < (typeof adTimes[(i+1)] !== 'undefined' ? adTimes[(i+1)] : docHeight)) {
                     swapAd();
                     adsloaded[i] = true;
