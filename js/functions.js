@@ -242,7 +242,7 @@ function getAdTimes(numAds) {
     var adReturns = [];
     var chunkHeight = docHeight / (numAds + 1);
     var chunkHalf = chunkHeight / 2;
-    for (i=0;i<=numAds;i++) {
+    for (i=0;i<numAds;i++) {
         adReturns.push( Math.round( chunkHalf + (chunkHeight * i) ) );
     }
     return adReturns;
