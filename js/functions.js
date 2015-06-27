@@ -205,7 +205,7 @@ $(document).keyup(function(e) {
                 swapGridBox(this);
             }
         });    
-    } else if (!moreAd && e.keyCode == 27) {
+    } else if (swapped && e.keyCode == 27) {
         hideAdManual();
     }    
 });
