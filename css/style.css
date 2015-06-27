@@ -319,6 +319,8 @@ section.inset.right.chart h3.subheading {
 .gridbox.expanded {
     cursor:auto;
     margin:0 auto;
+    padding:.5em;
+    border:1px solid #ccc;
     max-width:60%;
 }
 .gridbox.expanded .gridphoto {
@@ -401,6 +403,33 @@ section.inset.right.chart h3.subheading {
 .gridbox p.gridcaption.offseason {
     background-color: #e0d092;
 }
+.gridbox p.gridcaption.budgettips {
+    background-color: #f48b52;
+}
+.gridbox p.gridcaption.freeceremonies {
+    background-color: #647d6a;
+}
+.gridbox p.gridcaption.planninghelp {
+    background-color: #a3743e;
+}
+.gridbox p.gridcaption.priorities {
+    background-color: #de7878;
+}
+.gridbox p.gridcaption.proideas {
+    background-color: #d5c7c2;
+}
+.gridbox p.gridcaption.lowkey {
+    background-color: #ff9681;
+}
+.gridbox p.gridcaption.numbers {
+    background-color: #c06c84;
+}
+.gridbox p.gridcaption.samesex {
+    background-color: #c1c1bf;
+}
+.gridbox p.gridcaption.fivebudgets {
+    background-color: #adddcf;
+}
 .gridbox p.gridcaption, .gridcenter p.gridcaption {
     font-weight:600;
     background:#fff;
@@ -413,25 +442,25 @@ section.inset.right.chart h3.subheading {
     width:100%;
     height:100%;
     margin:0;
-    padding:27% 0 0;
+    padding:32% 10% 0;
     text-indent:0;
     text-align:center;
     cursor:pointer;
     pointer-events:none;
+    line-height:1.1;
 }
 .gridcenter {
     background-color:#fff;
 }
 .gridcenter p.gridcaption {
-    color:rgba(0,0,0,0.85);
-}
-.gridcenter p.gridcaption {
-    padding-top:23%;
+    color:rgba(0,0,0,0.65);
+    font-size:2.35em;
+    padding-top:31%;
     line-height: 1.3;
 }
 .gridbox:hover p.gridcaption {
-    background-color:rgba(255,255,255,0.25);
-    color:rgba(255,255,255,1.0);
+    background-color:rgba(255,255,255,0.45);
+    color:rgba(0,0,0,0.75);
 }
 /* ad related */
 .row.adcubes {
@@ -954,21 +983,6 @@ div#footer-bar ul.social li {
     float:left;
     display:inline-block;
 }
-@media (max-width:1550px) {
-    .opener div#title h2 {
-        font-size:12em;
-    }
-}
-@media (max-width:1450px) {
-    .opener div#title h2 {
-        font-size:11em;
-    }
-}
-@media (max-width:1340px) {
-    .opener div#title h2 {
-        font-size:10em;
-    }
-}
 @media (max-width:1240px) {
     .inset-video-right, section.inset .inset-video-right {
         margin-right:0;
@@ -982,22 +996,6 @@ div#footer-bar ul.social li {
         font-size:10em;
     }
 }
-@media (max-width:1200px) {
-    .opener div#title h2 {
-        font-size:9em;
-    }
-}
-@media (max-width:1100px) {
-    .opener div#title h2 {
-        font-size:8em;
-        line-height:.5;
-    }
-}
-@media (max-width:980px) {
-    .opener div#title h2 {
-        font-size:7em;
-    }
-}
 @media (max-width:70em) {
     section.inset.right {
         padding:0 1.5em 1.5em;
@@ -1008,6 +1006,22 @@ div#footer-bar ul.social li {
         padding:0 1.5em 1.5em;
         margin-left:0;
         width: 50%;
+    }
+}
+@media (max-width:1024px) {
+    .gridbox.expanded {
+        max-width:85%;
+    }
+    .gridbox p.gridcaption, .gridcenter p.gridcaption {
+        font-size: 1.6em;
+        padding:25% 5% 0;
+    }
+    .gridcenter p.gridcaption {
+        font-size:1.9em;
+        padding-top:28%;
+    }
+    .gridphotospace {
+        padding-bottom:60%;
     }
 }
 @media (max-width:930px) {
@@ -1096,6 +1110,23 @@ div#footer-bar ul.social li {
         margin-right:0;
         margin-left:0;
         width:100%;
+    }
+    .gridbox.expanded {
+        max-width:95%;
+    }
+    .gridbox p.gridcaption, .gridcenter p.gridcaption {
+        font-size: 1.8em;
+        padding:16% 5% 0;
+    }
+    .gridcenter p.gridcaption {
+        font-size:2em;
+        padding-top:0;
+    }
+    .gridphotospace {
+        padding-bottom:40%;
+    }
+    .gridcenter .gridphotospace {
+        padding-bottom:15%;
     }
     section.inset.right {
         margin:.5em 0 1.5em;
